@@ -1,16 +1,21 @@
+require('dotenv').config();
+const { ethers } = require('ethers');
+
 async function main() {
-  const Voting = await ethers.getContractFactory("Voting");
+  const provider = ethers.getDefaultProvider(process.env.API_URL);
 
-  // Start deployment, returning a promise that resolves to a contract object
-  const Voting_ = await Voting.deploy(["Mark", "Mike", "Henry", "Rock"], 90);
-  console.log("Contract address:", Voting_.address);
+  // Read the artifact
 
+  const VotingFactory = new ethers.ContractFactory(VotingArtifact.abi, VotingArtifact.bytecode, provider);
+  const Voting_ = await VotingFactory.deploy(["Mark", "Mike", "Henry", "Rock"], 90);
+  await Voting_.deployed();
 
+  console.log("Contract deployed to:", Voting_.address);
 }
 
 main()
- .then(() => process.exit(0))
- .catch(error => {
-   console.error(error);
-   process.exit(1);
- });
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error);
+    process.exit(1);
+  });

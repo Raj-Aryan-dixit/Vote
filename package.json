@@ -1,7 +1,11 @@
 {
-  "name": "react-app",
+  "name": "hardhat-project",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.2"
+  },
   "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
@@ -14,7 +18,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,3 +49,6 @@
     ]
   }
 }
+
+  
+ 
